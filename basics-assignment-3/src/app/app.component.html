@@ -21,10 +21,17 @@
 <button (click)="onToggle()">Display Details</button>
 <p *ngIf="showSecret">Secret Password = tuna</p>
 <hr />
-<div
+<!-- <div
   *ngFor="let logItem of log"
   [ngStyle]="{ backgroundColor: logItem >= 5 ? 'blue' : 'transparent' }"
   [ngClass]="{ 'white-text-color': logItem >= 5 }"
+> -->
+
+<!-- GETTING THE INDEX WHEN USING THE ngFor -->
+<div
+  *ngFor="let logItem of log; let i = index"
+  [ngStyle]="{ backgroundColor: i >= 4 ? 'blue' : 'transparent' }"
+  [ngClass]="{ 'white-text-color': i >= 4 }"
 >
   {{ logItem }}
 </div>
